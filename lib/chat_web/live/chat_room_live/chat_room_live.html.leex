@@ -1,0 +1,26 @@
+<div>
+  <h1>You are chatting in the room: <strong> <%= @room_id %> </strong><br>
+  Your username is: <strong> <%= @username%></strong></h1>
+  <p> Share the URL with a friend you want to chat with, or open it in a new tab or window and chat with yourself. No friends needed! </p>
+  <div id="app">
+    <div id="chat">
+      <div id= "messages" phx-update="prepend">
+        <%= for m <- @messages do %>
+          <%=display_message(m)%>
+        <% end %>
+      </div>
+    <form id="form" phx-submit="send">
+      <input type="text" name="text" />
+      <button type="submit">Send</button>
+    </form>
+    </div>
+    <div id="user-list">
+      <h1>Current active users:</h1>
+      <div id="list">
+      <%= for user <- @users do %>
+          <p><strong><%=user%></strong></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
