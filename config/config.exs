@@ -9,7 +9,6 @@ import Config
 
 # Configures the endpoint
 config :chat, ChatWeb.Endpoint,
-  url: [host: "https://phoenixlivechat.gigalixirapp.com", port: "4000"],
   check_origin: ["https://phoenixlivechat.gigalixirapp.com"],
   render_errors: [
     formats: [html: ChatWeb.ErrorHTML, json: ChatWeb.ErrorJSON],
